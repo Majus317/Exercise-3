@@ -37,6 +37,21 @@ def FFNN_bi(x):
     return y
 
 def FFNN_mult(x):
+    #wheights for multiclass network
+    W1 = np.array([[0.5, 0.1], [-0.8, -0.1], [0.9, 0.1], [0.4, 0.05]])
+    W2 = np.array([[0.8, -0.7], [0.2, 0.3]])
+    W3 = np.array([[0.9, -0.3, 0.1], [-0.4, 0.8, 0.05]])
+    #biases for multiclass network
+    b1 = np.array([0.01, -0.05])
+    b2 = np.array([0.1, 0.3])
+    b3 = np.array([-0.01, 0.3, 0.05])
+
+    #Layer 1
+    h1 = ReLU(np.dot(x, W1) + b1)
+    #Layer 2
+    h2 = ReLU(np.dot(h1, W2) + b2)
+    #Output Layer
+    y = softmax(np.dot(h2, W3) + b3)
     pass
 
 def FFNN(input_vector, mode):
@@ -49,4 +64,4 @@ def FFNN(input_vector, mode):
 
 
 
-FFNN(np.array([2, 0.5, 1, 0.2]),"binary")
+FFNN(np.array([2, 0.5, 1, 0.2]),"multiclass")
