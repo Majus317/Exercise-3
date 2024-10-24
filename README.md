@@ -45,6 +45,7 @@ v = np.array([1,2,3])
 
 For the dot product, use `np.dot()` with two numpy arrays as input.
 You can calculate the sum of a numpy array with `np.sum()`.
+The `ǹp.add()` function gives the sum of two vectors.
 Use `np.exp()` to calculate the exponent to the base e (works with integers and numpy arrays).
 
 The `max()` function returns the maximum of two inputs.

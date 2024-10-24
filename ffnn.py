@@ -4,6 +4,8 @@
 Implementation of simple feed forward neural network
 """
 
+import numpy as np
+
 
 def ReLU(x):
     pass
