@@ -3,24 +3,23 @@ import numpy as np
 """
 Implementation of simple feed forward neural network
 """
-binary = True
 
 def ReLU(x):
-    if x >= 0:
+    if x <= 0:
         x=0
-    print(x)
-    pass 
+    return x 
 
 
 def sigmoid(x):
-    pass
+    x = 1/(1+ np.exp(-x))
+    return x
 
 
 def softmax(x):
-    pass
+    x = np.exp(x)/sum(np.exp(x))
+    print(x)
+    return x
 
 
 def FFNN(input_vector, mode="binary"):
     pass
-
-ReLU(-4)
