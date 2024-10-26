@@ -6,7 +6,7 @@ Implementation of simple feed forward neural network
 
 import numpy as np
 
-
+print("test")
 def ReLU(x):
     pass
 
