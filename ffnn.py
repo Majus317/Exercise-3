@@ -45,7 +45,7 @@ def FFNN(input_vector, mode="binary"):
     h1 = np.add(h1, b1)
     
     #ReLU
-    ReLU(h1)
+    y = ReLU(h1)
 
     #print(h1)
 
@@ -63,7 +63,7 @@ def FFNN(input_vector, mode="binary"):
     #print(h2)
 
     #ReLU
-    ReLU(h2)
+    y = ReLU(h2)
 
     #print(h2)
 
@@ -75,7 +75,7 @@ def FFNN(input_vector, mode="binary"):
         y = np.add(y, b3b)
 
         #output sigmoid
-        sigmoid(y)
+        y = sigmoid(y)
 
         return y
         
@@ -90,7 +90,7 @@ def FFNN(input_vector, mode="binary"):
         y = np.add(y, b3m)
 
         #output softmax
-        softmax(y)
+        y = softmax(y)
     
         return y
     
