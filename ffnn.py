@@ -42,10 +42,12 @@ def FFNN(input_vector, mode="binary"):
     h1 = np.array([h1_1, h1_2])
 
     #add bias
-    np.add(h1, b1)
+    h1 = np.add(h1, b1)
     
     #ReLU
     ReLU(h1)
+
+    #print(h1)
 
     #hidden layer 2
     h2_1 = np.dot(h1, np.array([0.8, 0.2]))
@@ -53,18 +55,24 @@ def FFNN(input_vector, mode="binary"):
 
     h2 = np.array([h2_1, h2_2])
 
+    print(h2)
+
     #add bias
-    np.add(h2, b2)
+    h2 = np.add(h2, b2)
+
+    #print(h2)
 
     #ReLU
     ReLU(h2)
+
+    #print(h2)
 
     #output layer
     if mode == "binary":
         y = np.dot(h2, np.array([0.9, -0.4]))
 
         #output bias 
-        np.add(y, b3b)
+        y = np.add(y, b3b)
 
         #output sigmoid
         sigmoid(y)
@@ -79,7 +87,7 @@ def FFNN(input_vector, mode="binary"):
         y = np.array([y1, y2, y3])
 
         #output bias 
-        np.add(y, b3m)
+        y = np.add(y, b3m)
 
         #output softmax
         softmax(y)
@@ -88,4 +96,4 @@ def FFNN(input_vector, mode="binary"):
     
 
 print(FFNN( np.array([1, 0, 28, 4.5]), "binary"))
-print(FFNN( np.array([1, 0, 28, 4.5]), "multiclass"))
+print(FFNN( np.array([0.4, 13, -9.1, 6.5]), "multiclass"))
